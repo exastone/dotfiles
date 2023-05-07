@@ -48,6 +48,8 @@ Modules Imported:
 ## stone-key-bindings.lua
 User defined keybindings. Wezterm defaults is extensive and will likely clash with interactive terminal programs like helix & vim.
 
+*Note: stone-key-tables is not imported to this module but the keybindings to activate the various key maps are defined in this module by table name.*
+
 Modules Imported:
 - wezterm
 

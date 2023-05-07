@@ -3,11 +3,9 @@
 local wezterm = require "wezterm"
 local act = wezterm.action
 
--- This is the module table that we will export
 local stone_key_tables = {
     copy_mode = {
-
-        -- Cancel the mode by pressing escape
+        -- Cancel/escape mode
         { key = "Escape",     mods = "NONE",  action = act.CopyMode "Close" },
 
         -- Character movement
@@ -30,47 +28,35 @@ local stone_key_tables = {
         { key = ";",          mods = "ALT",   action = act.CopyMode "MoveToSelectionOtherEndHoriz", },
         { key = ";",          mods = "NONE",  action = act.CopyMode "ClearSelectionMode", },
         { key = "F",          mods = "SHIFT", action = act.CopyMode { JumpBackward = { prev_char = false } }, },
-        {
-            key = "y",
-            mods = "NONE",
-            action = act.Multiple {
-                { CopyTo = "PrimarySelection" },
-            },
-        },
-        { key = "u", mods = "CTRL", action = wezterm.action.CopyMode "ClearPattern" },
-
+        { key = "y",          mods = "NONE",  action = act.Multiple { { CopyTo = "PrimarySelection" }, }, },
+        { key = "u",          mods = "CTRL",  action = wezterm.action.CopyMode "ClearPattern" },
     },
-    search_mode = {
 
+    --[[ Defines the keys/actions that are active in search_mode.
+        Keybinding to active this mode is defined in stone-key-bindings module.
+        Currently: LEADER + f || SUPER + f]]
+    search_mode = {
         { key = "Escape", mods = "NONE",  action = wezterm.action.CopyMode "Close" },
         { key = "Enter",  mods = "NONE",  action = wezterm.action.CopyMode "NextMatch" },
         { key = "Enter",  mods = "SHIFT", action = wezterm.action.CopyMode "PriorMatch" },
-
         -- Cycles between: case-sensitive, ignore-case, regex
         { key = "r",      mods = "CTRL",  action = wezterm.action.CopyMode "CycleMatchType" },
         { key = "u",      mods = "CTRL",  action = wezterm.action.CopyMode "ClearPattern" },
     },
-    split = {
-        {
-            key = "DownArrow", action = wezterm.action.SplitPane { direction = "Down" },
-        },
-        {
-            key = "UpArrow", action = wezterm.action.SplitPane { direction = "Up" },
-        },
-        {
-            key = "LeftArrow", action = wezterm.action.SplitPane { direction = "Left" },
-        },
-        {
-            key = "RightArrow", action = wezterm.action.SplitPane { direction = "Right" },
-        },
 
+    --[[ Defines the keys/actions that are active in split mode.
+        Keybinding to active this mode is defined in stone-key-bindings module.
+        Currently: LEADER + | ]]
+    split = {
+        { key = "DownArrow",  action = wezterm.action.SplitPane { direction = "Down" }, },
+        { key = "UpArrow",    action = wezterm.action.SplitPane { direction = "Up" }, },
+        { key = "LeftArrow",  action = wezterm.action.SplitPane { direction = "Left" }, },
+        { key = "RightArrow", action = wezterm.action.SplitPane { direction = "Right" }, },
     },
-    --[[ Defines the keys that are active in our resize mode.
-         Since we're likely to want to make multiple adjustments,
-         we made the activation one_shot=false. We therefore need
-         to define a key assignment for getting out of this mode.
-         'resize_pane' here corresponds to the name="resize_pane" in
-         the key assignments above.]]
+
+    --[[ Defines the keys/actions that are active in resize mode.
+        Keybinding to active this mode is defined in stone-key-bindings module.
+        Currently: LEADER + r ]]
     resize = {
         { key = "LeftArrow",  action = act.AdjustPaneSize { "Left", 1 } },
         { key = "h",          action = act.AdjustPaneSize { "Left", 1 } },
@@ -80,23 +66,21 @@ local stone_key_tables = {
         { key = "k",          action = act.AdjustPaneSize { "Up", 1 } },
         { key = "DownArrow",  action = act.AdjustPaneSize { "Down", 1 } },
         { key = "j",          action = act.AdjustPaneSize { "Down", 1 } },
-
         -- Show panel selection pop-up
         { key = "p",          action = wezterm.action.PaneSelect { alphabet = "", mode = "Activate" } },
-
         -- Reset Font Size
         { key = "0",          action = wezterm.action.ResetFontSize },
         -- Increase Font Size
         { key = "=",          action = wezterm.action.IncreaseFontSize },
         -- Decrease Font Size
         { key = "-",          action = wezterm.action.DecreaseFontSize },
-
         -- Cancel the mode by pressing escape
         { key = "Escape",     action = "PopKeyTable" },
     },
-    -- Defines the keys that are active in our activate-pane mode.
-    -- 'activate_pane' here corresponds to the name="activate_pane" in
-    -- the key assignments above.
+
+    --[[ Defines the keys/actions that are active in activate_pane mode.
+        Keybinding to active this mode is defined in stone-key-bindings module.
+        Currently: LEADER + a ]]
     activate_pane = {
         { key = "LeftArrow",  action = act.ActivatePaneDirection "Left" },
         { key = "h",          action = act.ActivatePaneDirection "Left" },
@@ -112,8 +96,6 @@ local stone_key_tables = {
 
         -- Show panel selection pop-up
         { key = "p",          action = wezterm.action.PaneSelect { alphabet = "", mode = "Activate" } },
-
     },
 }
--- return table
 return stone_key_tables
