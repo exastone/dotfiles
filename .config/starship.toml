@@ -41,8 +41,13 @@ style_user = "bg:blk fg:15 bold"
 disabled = false
 
 [directory]
+<<<<<<< HEAD
 format = "[$path]($style)[$read_only]($read_only_style)"
 style = "bg:dark-blue fg:15"
+=======
+style = "bg:dark-blue fg:231"
+format = '[$path]($style)[$read_only]($read_only_style)'
+>>>>>>> main
 disabled = false
 truncate_to_repo = false
 truncation_length = 4
@@ -79,7 +84,6 @@ format = '\[[$symbol($version)]($style)\]'
 [conda]
 format = '\[[$symbol$environment]($style)\]'
 ignore_base = true
-#disabled = true
 
 [crystal]
 format = '\[[$symbol($version)]($style)\]'
@@ -109,15 +113,12 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
-symbol = ""
-style = "dimmed fg:7"
 format = " [$symbol$branch(:$remote_branch)]($style)"
-# always_show_remote = true
+style = "dimmed fg:7"
+symbol = ""
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
-# style = 'dimmed red'
-#up_to_date = "✓(fg:3 bg:3 dimmed)"
 
 [golang]
 format = '\[[$symbol($version)]($style)\]'
