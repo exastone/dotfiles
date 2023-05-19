@@ -93,6 +93,9 @@ local stone_key_bindings = {
 	-- Close Current Pane
 	{ key = "w",          mods = "SHIFT|SUPER", action = wezterm.action.CloseCurrentPane },
 
+	-- Hide Window
+	{ key = "h",          mods = "SUPER",       action = act.Hide },
+
 	-- Scroll Page Up/Down
 	{ key = "PageUp",     mods = "SHIFT",       action = wezterm.action.ScrollByPage(-1) },
 	{ key = "PageDown",   mods = "SHIFT",       action = wezterm.action.ScrollByPage(1) },

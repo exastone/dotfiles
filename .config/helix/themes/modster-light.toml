@@ -1,0 +1,162 @@
+# modster-light; my light theme
+"attribute" = "bogster-orange"
+"keyword" = { fg = "#5158BB", modifiers = [] }
+"keyword.directive" = "#393D3F"
+
+"punctuation" = { fg = "#000000", modifiers = [] }
+"punctuation.delimiter" = { fg = "modster-base0" }
+"operator" = { fg = "#666666", modifiers = ["bold"] }
+"special" = "#D90368"
+
+"variable.other.member" = { fg = "#020887" }
+"variable" = "bogster-fg0"
+"variable.parameter" = "bogster-fg0"
+"type" = "#BA160C"
+# "type.builtin" = { fg = "bogster-lred" }
+"constructor" = "bogster-lred"
+
+"function" = { fg = "#3066BE" }
+
+"function.macro" = { fg = "bogster-orange", modifiers = ["bold"] }
+"function.builtin" = { fg = "#1446A0", modifiers = ["italic"] }
+
+"keyword.control" = { fg = "#007587" }
+
+"comment" = { fg = "#8F754F", modifiers = ["italic"] }
+
+"variable.builtin" = "bogster-fg0"
+"constant" = "#7A28CB"
+"constant.builtin" = "#7A28CB"
+"constant.builtin.boolean" = "#541C8C"
+"constant.numeric" = "#BA4D14"
+"constant.character.escape" = { fg = "bogster-lgreen", modifiers = ["bold"] }
+"string" = "#065143"
+"string.special" = "#ff0000"
+# "string.special.path" = "#ff0000"
+# "string.regex" = "#f65143"
+"label" = "#D90368"
+"module" = "bogster-red"
+
+"markup.heading" = "#020887"
+"markup.list" = "bogster-red"
+"markup.bold" = { fg = "bogster-yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "bogster-purp", modifiers = ["italic"] }
+"markup.link.url" = { fg = "bogster-yellow", modifiers = ["underlined"] }
+"markup.link.text" = "bogster-red"
+"markup.quote" = "bogster-teal"
+"markup.raw.inline" = "#23543F"
+"markup.raw.block" = "#23543F"
+
+"diff.plus" = "bogster-teal"
+"diff.delta" = "bogster-orange"
+"diff.minus" = "bogster-lred"
+
+"ui.background" = { bg = "#CFCFC4" }
+"ui.gutter" = { bg = "#CFCFC4", fg = "dimmed-fg" }
+"ui.gutter.selected" = { fg = "bogster-yellow" }
+# "ui.linenr" = { fg = "dimmed-fg" }
+# "ui.linenr.selected" = { fg = "bogster-yellow" }
+
+"ui.cursorline" = { bg = "#BDBDB3" }
+
+"ui.popup" = { bg = "#C2C2B8" }
+
+# e.g. Prompt for menus such as GOTO window and multiple key options
+"ui.popup.info" = { fg = "#aa0000", bg = "#C2C2B8" }
+
+"ui.window" = { bg = "#ff0000", fg = "#ff0000" }
+"ui.help" = { fg = "#000000", bg = "#C2C2B8" }
+
+# see ':' menu
+# "ui.menu" = { fg = "#D8DEE9", bg = "modster-base2" }
+"ui.menu" = { fg = "#393D3F", bg = "#C2C2B8" }
+
+"ui.menu.selected" = { bg = "#bbc2cf", fg = "bogster-yellow", modifiers = [
+  "italic",
+] }
+
+# effects color of bufferline aswell
+"ui.statusline" = { fg = "#D8DEE9", bg = "modster-base2" }
+
+"ui.statusline.inactive" = { fg = "dimmed-fg", bg = "modster-base2" }
+
+"ui.statusline.normal" = { bg = "dimmed-fg", fg = "modster-base2", modifiers = [
+  "bold",
+] }
+"ui.statusline.insert" = { bg = "#8FBFAB", fg = "modster-base2", modifiers = [
+  "bold",
+] }
+"ui.statusline.select" = { bg = "#BF8FB8", fg = "modster-base2", modifiers = [
+  "bold",
+] }
+
+
+"ui.text" = { fg = "modster-base0" }
+# e.g. file picker -> focused item
+"ui.text.focus" = { bg = "#bbc2cf", modifiers = ["bold", "italic"] }
+"ui.virtual.whitespace" = "bogster-base4"
+"ui.virtual.inlay-hint" = { fg = "bogster-base4", bg = "#b0b0b0", modifiers = [
+  "italic",
+] }
+"ui.virtual.indent-guide" = "bogster-base4"
+"ui.virtual.wrap" = "bogster-base4"
+"ui.virtual.ruler" = { bg = "#C2C2B8" }
+
+# see: <Space> mode prompt and '[' & ']' prompt
+# "ui.text.info" = { bg = "#662277", fg = "#0000ff" }
+"ui.text.info" = { fg = "#2B4162" }
+
+"ui.selection" = { bg = "selection-bg" }
+
+"ui.cursor.match" = { modifiers = ["bold", "reversed"] }
+
+
+# "ui.cursor" = { fg = "bogster-base5", modifiers = ["reversed"] }
+# "ui.cursor" = { bg = "bogster-base5", modifiers = ["reversed"] }
+
+# Cursor style only apply when cursor-shape = "block"
+# "ui.cursor"
+# "ui.cursor.primary"
+# "ui.cursor.select" 
+# "ui.cursor.insert" 
+
+
+"warning" = { fg = "#F08901", modifiers = ["bold"] }
+"error" = { fg = "bogster-red", modifiers = ["bold"] }
+"info" = { fg = "bogster-teal", modifiers = ["bold", "underlined"] }
+"hint" = { fg = "bogster-blue", modifiers = ["bold"] }
+
+"diagnostic.warning".underline = { color = "#FF9B5A", style = "curl" }
+"diagnostic.error".underline = { color = "bogster-red", style = "curl" }
+"diagnostic.info".underline = { color = "bogster-teal", style = "curl" }
+"diagnostic.hint".underline = { color = "bogster-blue", style = "curl" }
+
+
+[palette]
+bogster-yellow = "#020887"
+bogster-lblue = "#9AC4F8"
+bogster-teal = "#7A28CB"
+bogster-blue = "#36b2d4"
+bogster-orange = "#D6B794"
+bogster-red = "#BA160C"
+bogster-lgreen = "#0fff97"
+bogster-lred = "#DD2D4A"
+bogster-purp = "#b759dc"
+
+bogster-base0 = "#13181e"
+bogster-base1 = "#161c23"
+bogster-base2 = "#232d38"
+bogster-base3 = "#313f4e"
+bogster-base4 = "#415367"
+bogster-base5 = "#abb2bf"
+
+bogster-fg0 = "#000000"
+bogster-fg1 = "#1F2421"
+
+modster-base0 = "#000000"
+modster-base1 = "#132145"
+modster-base2 = "#1F3266"
+modster-base3 = "#1D3354"
+
+selection-bg = "#C2CDF2"
+dimmed-fg = "#838EAF"
