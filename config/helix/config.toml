@@ -1,0 +1,110 @@
+theme = "modster"
+# theme = "modster-bright"
+# theme = "modster-light"
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+normal = "bar"
+
+[editor.soft-wrap]
+enable = true
+
+[editor]
+color-modes = true
+gutters = ["diagnostics", "line-numbers", "spacer"]
+scrolloff = 4
+mouse = true
+rulers = [100]
+auto-info = true
+# auto-completion = false
+idle-timeout = 1200
+cursorline = true
+bufferline = "always"
+cursorcolumn = true
+auto-format = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["diagnostics", "file-name"]
+right = [
+  "version-control",
+  "selections",
+  "file-encoding",
+  "file-line-ending",
+  "position",
+  "position-percentage",
+  "total-line-numbers",
+  "spacer",
+]
+# default values 
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+
+[editor.lsp]
+# prevent auto popup documentation while typing
+auto-signature-help = false
+# display-messages = true
+display-inlay-hints = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+# tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = true
+character = "╎"
+# skip-levels = 0
+
+[editor.file-picker]
+max-depth = 3
+
+[keys.normal]
+# "C-r" = "rotate_view"
+"A-P" = ["command_palette"]
+"tab" = ["insert_mode"]
+"backspace" = ["delete_char_backward", "insert_mode"]
+"esc" = ["collapse_selection", "keep_primary_selection"]
+"p" = ["paste_before", "collapse_selection", "keep_primary_selection"]
+"P" = [
+  ":clipboard-paste-before",
+  "collapse_selection",
+  "keep_primary_selection",
+]
+"del" = ["delete_char_forward", "insert_mode"]
+"A-c" = "no_op"
+
+[keys.select]
+j = { k = "normal_mode" }
+J = { K = "normal_mode" }
+"A-ret" = "normal_mode"
+
+[keys.insert]
+j = { k = "normal_mode" }
+J = { K = "normal_mode" }
+"C-c" = "toggle_comments"
+"A-ret" = "normal_mode"
+"A-h" = ["move_char_left"]
+"A-j" = ["move_line_down"]
+"A-k" = ["move_line_up"]
+"A-l" = ["move_char_right"]
+[keys.insert."A-g"]
+l = ["goto_line_end"]
+h = ["goto_line_start"]
+p = ["paste_before"]
+u = ["normal_mode", "undo"]
+U = ["normal_mode", "redo"]
+
+# Prompt for custom menu
+[keys.normal.g]
+"]" = ["goto_next_buffer"]
+"[" = ["goto_previous_buffer"]

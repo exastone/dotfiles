@@ -110,6 +110,9 @@ local stone_key_bindings = {
 
 	-- Clear scrollback buffer & viewport
 	{ key = "K",          mods = "SUPER|SHIFT", action = act.ClearScrollback "ScrollbackAndViewport" },
+	{ key = "UpArrow",    mods = "ALT|SHIFT",   action = act.ScrollByLine(-1) },
+	{ key = "DownArrow",  mods = "ALT|SHIFT",   action = act.ScrollByLine(1) },
+
 
 }
 

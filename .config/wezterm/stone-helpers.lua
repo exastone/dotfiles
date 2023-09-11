@@ -24,6 +24,12 @@ function stone_helpers.status_info(window)
   window:set_right_status(wezterm.format(info_table))
 end
 
+function stone_helpers.action_callback(callback)
+  local event_id = "..." -- the function generates a unique event id
+  wezterm.on(event_id, callback)
+  return wezterm.action.EmitEvent(event_id)
+end
+
 -- Get system appearance and return colour table based on system appearance value
 function stone_helpers.scheme_for_appearance(appearance)
   if appearance:find "Dark" then
