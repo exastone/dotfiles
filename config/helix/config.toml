@@ -1,6 +1,5 @@
-theme = "modster"
-# theme = "modster-bright"
-# theme = "modster-light"
+# theme = "modster"
+theme = "modster-bright"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,41 +10,32 @@ normal = "bar"
 enable = true
 
 [editor]
-color-modes = true
-gutters = ["diagnostics", "line-numbers", "spacer"]
-scrolloff = 4
-mouse = true
-rulers = [100]
-auto-info = true
 # auto-completion = false
-idle-timeout = 1200
-cursorline = true
+# idle-timeout = 1200
 bufferline = "always"
+color-modes = true
 cursorcolumn = true
-auto-format = true
+cursorline = true
+gutters = ["diagnostics", "line-numbers", "spacer"]
+preview-completion-insert = false
+rulers = [100]
+scroll-lines = 1
+scrolloff = 4
 
 [editor.statusline]
-left = ["mode", "spinner"]
-center = ["diagnostics", "file-name"]
+left = ["mode", "spacer", "spinner", "spacer", "register"]
+center = ["file-name", "diagnostics"]
 right = [
-  "version-control",
   "selections",
   "file-encoding",
-  "file-line-ending",
   "position",
-  "position-percentage",
   "total-line-numbers",
-  "spacer",
+  "position-percentage",
 ]
-# default values 
-mode.normal = "NOR"
-mode.insert = "INS"
-mode.select = "SEL"
 
 [editor.lsp]
-# prevent auto popup documentation while typing
-auto-signature-help = false
-# display-messages = true
+# prevent auto popup documentation while typing when =false
+# auto-signature-help = false
 display-inlay-hints = true
 
 [editor.whitespace.render]
@@ -63,12 +53,12 @@ newline = "⏎"
 [editor.indent-guides]
 render = true
 character = "╎"
-# skip-levels = 0
 
 [editor.file-picker]
 max-depth = 3
 
 [keys.normal]
+"C-/" = "toggle_comments" # [1]
 # "C-r" = "rotate_view"
 "A-P" = ["command_palette"]
 "tab" = ["insert_mode"]
@@ -82,21 +72,32 @@ max-depth = 3
 ]
 "del" = ["delete_char_forward", "insert_mode"]
 "A-c" = "no_op"
+"A-space" = "code_action"
 
 [keys.select]
-j = { k = "normal_mode" }
+# j = { k = "normal_mode" }
 J = { K = "normal_mode" }
 "A-ret" = "normal_mode"
 
+[keys.select.j]
+k = "normal_mode"
+[keys.insert.j]
+k = "normal_mode"
+
 [keys.insert]
-j = { k = "normal_mode" }
+# j = { k = "normal_mode" }
 J = { K = "normal_mode" }
+
+"C-/" = "toggle_comments" # [1]
 "C-c" = "toggle_comments"
+
 "A-ret" = "normal_mode"
 "A-h" = ["move_char_left"]
 "A-j" = ["move_line_down"]
 "A-k" = ["move_line_up"]
 "A-l" = ["move_char_right"]
+"A-space" = ["completion"]
+
 [keys.insert."A-g"]
 l = ["goto_line_end"]
 h = ["goto_line_start"]
@@ -108,3 +109,7 @@ U = ["normal_mode", "redo"]
 [keys.normal.g]
 "]" = ["goto_next_buffer"]
 "[" = ["goto_previous_buffer"]
+
+# [1] requires enhanced keyboard protocol
+# https://github.com/helix-editor/helix/wiki/Terminal-Support#enhanced-keyboard-protocol
+# https://wezfurlong.org/wezterm/config/key-encoding.html#kitty-keyboard-protocol

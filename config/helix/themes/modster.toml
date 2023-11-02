@@ -17,9 +17,8 @@
 
 
 "variable.other.member" = "#88C0D0"
-# "variable.other.member" = "#D8DEE9"
 "variable" = "bogster-fg0"
-"variable.parameter" = "bogster-fg0"
+"variable.parameter" = { fg = "bogster-fg0", modifiers = ["italic"] }
 "type" = "bogster-lred"
 "type.builtin" = { fg = "bogster-red" }
 "constructor" = "bogster-lred"
@@ -41,7 +40,6 @@
 "module" = "bogster-red"
 
 "markup.heading" = "bogster-lyellow"
-# "markup.heading.marker" = "bogster-lyellow"
 "markup.list" = "bogster-red"
 "markup.bold" = { fg = "bogster-yellow", modifiers = ["bold"] }
 "markup.italic" = { fg = "bogster-purp", modifiers = ["italic"] }
@@ -76,7 +74,7 @@
 "ui.cursorline.primary" = { bg = "modster-base1" }
 # primary, secondary selectors don't seem to work?
 # "ui.cursorcolumn.primary" = { bg = "#11123D" }
-# "ui.cursorcolumn.secondary" = { bg = "#ff0000" }
+"ui.cursorcolumn.secondary" = {}
 
 "ui.statusline" = { fg = "bogster-fg1", bg = "modster-base1" }
 "ui.statusline.inactive" = { fg = "#A6A09A", bg = "#0E1933" }

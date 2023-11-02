@@ -53,7 +53,7 @@
 # see ':' menu
 "ui.menu" = { bg = "#D8DEE9", fg = "#393D3F" }
 "ui.menu.selected" = { bg = "#bbc2cf", fg = "bogster-yellow", modifiers = [
-    "italic",
+  "italic",
 ] }
 "ui.help" = { bg = "#D8DEE9", fg = "#000000" }
 "ui.cursorline" = { bg = "#d7d8e9" }
@@ -75,10 +75,10 @@
 
 "ui.statusline.normal" = { fg = "#000000", modifiers = ["bold"] }
 "ui.statusline.insert" = { bg = "#8FBFAB", fg = "#000000", modifiers = [
-    "bold",
+  "bold",
 ] }
 "ui.statusline.select" = { bg = "#BF8FB8", fg = "#000000", modifiers = [
-    "bold",
+  "bold",
 ] }
 
 
@@ -86,8 +86,8 @@
 "ui.virtual.whitespace" = { fg = "#393D3F", modifiers = ["dim"] }
 "ui.virtual.indent-guide" = { fg = "#393D3F", modifiers = ["dim"] }
 "ui.virtual.inlay-hint" = { bg = "#DFE5F0", fg = "#393D3F", modifiers = [
-    "italic",
-    "dim",
+  "italic",
+  "dim",
 ] }
 "ui.virtual.ruler" = { bg = "#E4E6EB", fg = "#ff0000" }
 
